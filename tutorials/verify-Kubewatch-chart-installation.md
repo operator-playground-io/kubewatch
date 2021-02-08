@@ -18,32 +18,92 @@ kubectl get pods --namespace Kubewatch
 You will see similar to this output:
 
 ```
-NAME                     READY   STATUS              RESTARTS   AGE
-my-release-Kubewatch-0       0/1     ContainerCreating   0          16s
+NAME                         READY   STATUS       RESTARTS   AGE
+kubewatch-7595695645-x966d   1/1     Running       0          14s
 ```
 
-It may take few minutes to change the `STATUS` from `ContainerCreating` to `Running`. 
-
-```output
-NAME                         READY   STATUS    RESTARTS   AGE
-pod/my-release-kafka-0       1/1     Running   0          61s
-pod/my-release-zookeeper-0   1/1     Running   0          61s
-```
-
-Once the `Kubewtach` and PODs are up and running , and `READY` states are `1/1` for both, your Kafka is ready to use.
-
-### Check all the Kubernetes resources status
-
-You can run the following command to know status of all the deployed resources inside the namespace `kafka`
-
+### To check logs 
 
 ```execute
-kubectl get all --namespace Kubewatch
+kubectl logs -f kubewatch-7595695645-x966d
 ```
 
-All the deployment and service status should be Running.
+You will get Similar Output
 
 ```
-NAME                         READY   STATUS    RESTARTS   AGE
-pod/my-release-kafka-0       1/1     Running   0          65m
+E0208 06:20:52.681504       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Deployment: deployments.apps is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "deployments" in API group "apps" at the cluster scope
+E0208 06:20:53.682553       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Pod: pods is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "pods" in API group "" at the cluster scope
+E0208 06:20:53.683031       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Deployment: deployments.apps is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "deployments" in API group "apps" at the cluster scope
+E0208 06:20:54.684115       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Pod: pods is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "pods" in API group "" at the cluster scope
+E0208 06:20:54.685593       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Deployment: deployments.apps is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "deployments" in API group "apps" at the cluster scope
+E0208 06:20:55.686953       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Pod: pods is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "pods" in API group "" at the cluster scope
+E0208 06:20:55.687083       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Deployment: deployments.apps is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "deployments" in API group "apps" at the cluster scope
+E0208 06:20:56.688484       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Pod: pods is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "pods" in API group "" at the cluster scope
+E0208 06:20:56.689537       1 reflector.go:123] github.com/bitnami-labs/kubewatch/pkg/controller/controller.go:466: Failed to list *v1.Deployment: deployments.apps is forbidden: User "system:serviceaccount:default:kubewatch" cannot list resource "deployments" in API group "apps" at the cluster scope
+
 ```
+
+The above  error occurs due to  improper permission for cluster. To fix the permission apply the below configs,
+
+```execute
+cat <<EOF | kubectl apply -f -
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: kubewatch
+rules:
+- apiGroups: ["", "extensions", "apps", "batch"]
+  resources: [ "pods", "jobs", "namespaces", "services", "deployments", "replicationcontrollers", "replicasets", "daemonsets"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kubewatch
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: kubewatch
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: kubewatch
+subjects:
+  - kind: ServiceAccount
+    name: kubewatch
+    namespace: default
+EOF
+
+```
+
+
+You will see similar Output;
+
+
+```
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: kube-system/kube-scheduler-event-k8s-ibm-operators-playground-ndwmzi.softlayer.com" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: local-path-storage/local-path-provisioner-59d7b946f5-zznq4" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: olm/olm-operator-946bd977f-mmrdp" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: olm/packageserver-5bc8644956-qzmrq" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: kube-system/kube-flannel-ds-amd64-lhggv" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: kubernetes-dashboard/kubernetes-dashboard-6ff4884d7-64gjd" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: olm/catalog-operator-7b788c597d-hnhlb" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: kube-system/etcd-event-k8s-ibm-operators-playground-ndwmzi.softlayer.com" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: kubernetes-dashboard/dashboard-metrics-scraper-c79c65bb7-lvfrp" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: olm/operatorhubio-catalog-rkcbx" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: olm/packageserver-5bc8644956-n4bqw" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Processing add to pod: default/kubewatch-7595695645-j9242" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Kubewatch controller synced and ready" pkg=kubewatch-pod
+time="2021-02-08T06:31:34Z" level=info msg="Kubewatch controller synced and ready" pkg=kubewatch-deployment
+
+```
+
+Kubewatch is sucuessfull installed.
+
+
+
+
+

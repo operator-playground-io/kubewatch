@@ -14,7 +14,7 @@
          "description":"How to deploy a test client that will execute scripts against the kubewatch cluster",
          "duration":"10 min",
          "tutorial_name":"create-test-client.md",
-         "title":"How to Deploy Test Client for Kafka"
+         "title":"How to Deploy Test Client for kubewatch"
       },
 
       {

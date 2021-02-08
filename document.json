@@ -3,7 +3,7 @@
   "description": "Kubewtach Helm Chart",
   "logo": "_images/Custom.png",
   "has_supporting_content": true,
-  "stack_id": "Kubewtach-bitnami-chart",
+  "stack_id": "",
   "type": "Helm",
   "categories": ["Conterization"],
   "platform": "Kubernetes",

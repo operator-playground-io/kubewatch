@@ -1,0 +1,47 @@
+{
+  "name": "Kubewtach Helm Chart",
+  "description": "Kubewtach Bitnami Helm Chart",
+  "logo": "_images/Custom.png",
+  "has_supporting_content": true,
+  "stack_id": "Kubewtach-bitnami-chart",
+  "type": "Helm",
+  "categories": ["Conterization"],
+  "platform": "Kubernetes",
+  "cover": "cover.md",
+  "meta": {
+        "Type": [
+            "Helm"
+        ],
+        "Install time": [
+            "10 minutes"
+        ],
+        "Categories": [
+            "Conterization"
+        ]
+  },
+"deployment_information": {
+  "Project": "NA",
+  "Deployment Namespace": "Kubewtach"
+},
+ "commands": [
+    {
+      "description": "Create Namespace",
+      "exec": "kubectl create namespace Kubewtach"
+    },
+    {
+      "description": "Add Bitnami Repo",
+      "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+    },
+    {
+      "description": "Install the chart",
+      "exec": "helm install kubewatch bitnami/kubewatch",
+    }
+  ],
+  "display": [
+    {
+      "name": "Developer Dashboard",
+      "url": "##DNS.host##/codeserver",
+      "enabled": true
+    }
+  ]
+}

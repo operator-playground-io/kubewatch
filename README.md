@@ -1,2 +1,1 @@
-# kubewatch
-kubewatch
+# Kafka Helm Chart

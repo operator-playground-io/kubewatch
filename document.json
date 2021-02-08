@@ -1,6 +1,6 @@
 {
   "name": "Kubewtach Helm Chart",
-  "description": "Kubewtach Bitnami Helm Chart",
+  "description": "Kubewtach Helm Chart",
   "logo": "_images/Custom.png",
   "has_supporting_content": true,
   "stack_id": "Kubewtach-bitnami-chart",

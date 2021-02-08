@@ -28,12 +28,6 @@
          "duration":"15 min",
          "tutorial_name":"upgrading-and-rollback-kubewatch.md",
          "title":"Upgrade and Rollback Kubewtach Helm Chart tutorial"
-      },
-      {
-         "description":" How to uninstall Helm Chart",
-         "duration":"5 min",
-         "tutorial_name":"uninstall-helm-chart.md",
-         "title":"Uninstall Kubewtach Helm Chart"
       }
       
    ],

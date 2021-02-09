@@ -1,9 +1,9 @@
 {
-  "name": "Kubewtach",
-  "description": "Kubewtach",
+  "name": "Kubewtach Helm Chart",
+  "description": "Kubewtach Bitnami Helm Chart",
   "logo": "_images/Custom.png",
   "has_supporting_content": true,
-  "stack_id": "Kubewtach-bitnami-char",
+  "stack_id": "Kubewtach-bitnami-chart",
   "type": "Helm",
   "categories": ["Conterization"],
   "platform": "Kubernetes",

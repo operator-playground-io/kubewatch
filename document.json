@@ -1,7 +1,7 @@
 {
   "name": "Kubewtach Helm Chart",
   "description": "Kubewtach Bitnami Helm Chart",
-  "logo": "_images/Custom.png",
+  "logo": "",
   "has_supporting_content": true,
   "stack_id": "Kubewtach-bitnami-chart",
   "type": "Helm",
@@ -13,7 +13,7 @@
             "Helm"
         ],
         "Install time": [
-            "10 minutes"
+            "5 minutes"
         ],
         "Categories": [
             "Conterization"

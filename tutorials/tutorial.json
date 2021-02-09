@@ -3,7 +3,8 @@
    "appLayout":"accordion",
    "appTheme":"g90",
    "footer":"footer.md",
-   "tutorials":[
+   "tutorials":
+   [
       {
          "description":" How to verify chart is installed successfully.",
          "duration":"5 min",

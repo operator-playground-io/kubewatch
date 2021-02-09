@@ -7,7 +7,7 @@
       "Helm"
     ], 
     "document": "",
-    "stack_id": "",
+    "stack_id": "kubewtach-helm",
     "type": "Helm",
     "categories": [
       "Conterization"

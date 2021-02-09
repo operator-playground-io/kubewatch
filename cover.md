@@ -35,7 +35,7 @@ Bitnami container images are released daily with the latest distribution package
 This CVE scan report contains a security report with all open CVEs. To get the list of actionable security issues, find the "latest" tag, click the vulnerability report link under the corresponding "Security scan" field and then select the "Only show fixable" filter on the next page.
 
 
-#### Configuration
+### Configuration
 
 
 **Environment variables**

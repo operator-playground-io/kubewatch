@@ -1,1 +1,1 @@
-# Kafka Helm Chart
+# Kubewatch Helm Chart

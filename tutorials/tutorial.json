@@ -1,5 +1,5 @@
 {
-   "name":"kubewatch Helm Chart Tutorial",
+   "name":"kubewtach Helm Chart Tutorial",
    "appLayout":"accordion",
    "appTheme":"g90",
    "footer":"footer.md",
@@ -8,22 +8,22 @@
       {
          "description":" How to verify chart is installed successfully.",
          "duration":"5 min",
-         "tutorial_name":"verify-Kubewtach-chart-installation.md",
+         "tutorial_name":"verify-kubewtach-chart-installation.md",
          "title":"Verify Chart Installation is successful"
       },
       {
          "description":" Detail description of Configuration Parameters of kubewatch Helm Chart",
          "duration":"5 min",
-         "tutorial_name":"configuration-parameters-of-Kubewtach-helm-chart.md",
+         "tutorial_name":"configuration-parameters-of-kubewtach-helm-chart.md",
          "title":"Configuration Parameters of Kubewtach Helm Chart Tutorial"
       }
       
    ],
    "usefulLinks":[
       {
-         "title":"kubewatch Helm Chart",
-         "description":"kubewatch Bitnami Helm Chart",
-         "url":"https://bitnami.com/stack/Kubewtach/helm"
+         "title":"kubewtach Helm Chart",
+         "description":"kubewtach Bitnami Helm Chart",
+         "url":"https://bitnami.com/stack/kubewtach/helm"
       }
    ]
 }

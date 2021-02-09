@@ -1,6 +1,6 @@
 {
-  "name": "Kubewtach Helm Chart",
-  "description": "Kubewtach Helm Chart",
+  "name": "Kubewtach",
+  "description": "Kubewtach",
   "logo": "_images/Custom.png",
   "has_supporting_content": true,
   "stack_id": "",

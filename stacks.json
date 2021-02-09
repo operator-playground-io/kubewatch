@@ -1,13 +1,13 @@
 {
-    "title": "Kubewtach",
-    "description": "Kubewtach",
+    "title": "Kubewtach Helm Chart",
+    "description": "Kubewtach Bitnami Helm Char",
     "logo": "",
     "enabled": true,
     "category_label": [
       "Helm"
     ], 
     "document": "",
-    "stack_id": "kubewtach-helm",
+    "stack_id": "Kubewtach-bitnami-chart",
     "type": "Helm",
     "categories": [
       "Conterization"

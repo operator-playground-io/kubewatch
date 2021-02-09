@@ -1,9 +1,9 @@
 {
-  "name": "Kubewtach Helm Chart",
-  "description": "Kubewtach Bitnami Helm Chart",
+  "name": "kubewtach Helm Chart",
+  "description": "kubewtach Bitnami Helm Chart",
   "logo": "",
   "has_supporting_content": true,
-  "stack_id": "Kubewtach-bitnami-chart",
+  "stack_id": "kubewtach-bitnami-chart",
   "type": "Helm",
   "categories": ["Conterization"],
   "platform": "Kubernetes",
@@ -21,12 +21,12 @@
   },
 "deployment_information": {
   "Project": "NA",
-  "Deployment Namespace": "Kubewtach"
+  "Deployment Namespace": "kubewtach"
 },
  "commands": [
     {
       "description": "Create Namespace",
-      "exec": "kubectl create namespace Kubewtach"
+      "exec": "kubectl create namespace kubewtach"
     },
     {
       "description": "Add Bitnami Repo",
@@ -34,7 +34,7 @@
     },
     {
       "description": "Install the chart",
-      "exec": "helm install kubewatch bitnami/kubewatch",
+      "exec": "helm install kubewtach bitnami/kubewatch",
     }
   ],
   "display": [

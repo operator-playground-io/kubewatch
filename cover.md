@@ -75,7 +75,7 @@ In this tutorial,we are going to cover following topics:
 
 - Verify status of pods and services. 
 
-- Uninstall Kafka Helm Chart and release resources.
+- Uninstall kubewtach Helm Chart and release resources.
 
 
 

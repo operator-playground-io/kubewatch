@@ -1,6 +1,6 @@
 {
     "title": "Kubewtach Helm Chart",
-    "description": "Kubewtach Bitnami Helm Char",
+    "description": "Kubewtach Bitnami Helm Chart",
     "logo": "",
     "enabled": true,
     "category_label": [

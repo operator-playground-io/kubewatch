@@ -43,14 +43,23 @@ This CVE scan report contains a security report with all open CVEs. To get the l
 The Kubewatch instance can be customized by specifying the below environment variables on the first run:
 
 KW_SLACK_CHANNEL: Slack channel. No defaults.
+
 KW_SLACK_TOKEN: Slack token. No defaults.
+
 KW_HIPCHAT_ROOM: HipChat room. No defaults.
+
 KW_HIPCHAT_TOKEN: HipChat token. No defaults.
+
 KW_HIPCHAT_URL: HipChat URL. No defaults.
+
 KW_MATTERMOST_CHANNEL: Mattermost channel. No defaults.
+
 KW_MATTERMOST_URL: Mattermost URL. No defaults.
+
 KW_MATTERMOST_USERNAME: Mattermost username. No defaults.
+
 KW_FLOCK_URL: Flock URL. No defaults.
+
 KW_WEBHOOK_URL: WEBHOOK URL. No defaults.
 
 
@@ -58,9 +67,10 @@ KW_WEBHOOK_URL: WEBHOOK URL. No defaults.
 
 In this tutorial,we are going to cover following topics:
 
-- How to Install Kafka Bitnami Helm Chart and verify its successful installation.
+- What is Kubewtach ?
+-how to use kubewatch and to integarte with Slack channel?
+-How to Install Kubewatch Bitnami Helm Chart and verify its successful installation.
 - Verify status of pods and services. 
-- Deploy a test client that will execute scripts against the Kafka cluster.
 - Uninstall Kafka Helm Chart and release resources.
 
 

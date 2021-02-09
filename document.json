@@ -34,7 +34,7 @@
     },
     {
       "description": "Install the chart",
-      "exec": "helm install kubewtach bitnami/kubewatch",
+      "exec": "helm install kubewtach bitnami/kubewatch"
     }
   ],
   "display": [

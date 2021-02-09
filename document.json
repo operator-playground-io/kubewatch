@@ -3,7 +3,7 @@
   "description": "Kubewtach",
   "logo": "_images/Custom.png",
   "has_supporting_content": true,
-  "stack_id": "",
+  "stack_id": "kubewtach-helm",
   "type": "Helm",
   "categories": ["Conterization"],
   "platform": "Kubernetes",

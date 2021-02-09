@@ -15,12 +15,6 @@
          "duration":"5 min",
          "tutorial_name":"configuration-parameters-of-Kubewtach-helm-chart.md",
          "title":"Configuration Parameters of Kubewtach Helm Chart Tutorial"
-      },
-      {
-         "description":" Uninstall helm chart",
-         "duration":"15 min",
-         "tutorial_name":"Uninstall-helm-chart.md",
-         "title":"Uninstall Kubewtach Helm Chart "
       }
       
    ],

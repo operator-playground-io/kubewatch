@@ -69,7 +69,7 @@ In this tutorial,we are going to cover following topics:
 
 - What is Kubewtach ?
 
-- how to use kubewatch and to integarte with Slack channel?
+- How to use kubewatch and to integarte with Slack channel?
 
 - How to Install Kubewatch Bitnami Helm Chart and verify its successful installation?
 
